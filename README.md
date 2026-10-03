@@ -11,7 +11,7 @@ python3 -m http.server 5173   # then visit http://localhost:5173
 ```
 index.html          Home page, one section per <section> (ids match the nav links)
 about-kim.html      About Kim page (same header, footer, CSS and JS as the home page)
-qec.html            Quantum Energy Coaching page (includes a YouTube embed and a link to qecliving.com)
+qec.html            Quantum Energy Coaching page (includes a YouTube embed)
 css/styles.css      Design tokens (top of file), then styles grouped by section
 js/main.js          Booking link, mobile menu, sticky header, smooth scroll, reveal-on-scroll,
                     image placeholders, testimonial controls
