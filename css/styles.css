@@ -365,6 +365,20 @@ main:focus { outline: none; }
   text-decoration: none;
 }
 .site-nav__list a:hover { color: var(--teal-ink); }
+/* Active item: current page, or the home section in view (set by main.js) */
+.site-nav__list a[aria-current] {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--teal-ink);
+}
+.site-nav__list a[aria-current]::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--teal);
+}
 .site-nav__cta { align-self: flex-start; }
 
 /* Desktop nav needs ~1180px for seven links + CTA, so it switches at 1280px */
@@ -405,6 +419,11 @@ main:focus { outline: none; }
   }
   .site-nav__list a:hover { color: inherit; }
   .site-nav__list a:hover::after { transform: scaleX(1); }
+  .site-nav__list a[aria-current] { display: block; }
+  .site-nav__list a[aria-current]::before { content: none; }
+  .site-nav__list a[aria-current]::after { height: 2px; transform: scaleX(1); }
+  /* Stay white while the header is transparent over the home hero */
+  .site-header:not(.is-solid, .site-header--solid) .site-nav__list a[aria-current] { color: inherit; }
   .site-nav__cta { padding-inline: 18px; font-size: 0.6875rem; white-space: nowrap; }
 }
 

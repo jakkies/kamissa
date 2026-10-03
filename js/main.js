@@ -98,6 +98,44 @@ const BOOKING_URL = '#book';
     target.focus({ preventScroll: true });
   });
 
+  /* ---------- Active menu item for in-page sections (home page) ---------- */
+  // Inner pages mark their own link with aria-current="page" in the HTML.
+  if (!nav.querySelector('[aria-current="page"]')) {
+    const spyLinks = [...nav.querySelectorAll('.site-nav__list a[href^="#"]')]
+      .map((link) => ({ link, section: document.getElementById(link.getAttribute('href').slice(1)) }))
+      .filter(({ section }) => section);
+
+    const setActive = (active) => {
+      spyLinks.forEach(({ link }) => {
+        if (link === active) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    };
+
+    let ticking = false;
+    const updateActive = () => {
+      ticking = false;
+      const line = header.offsetHeight + window.innerHeight * 0.3;
+      const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+      const current = atBottom
+        ? spyLinks[spyLinks.length - 1]
+        : spyLinks.find(({ section }) => {
+          const r = section.getBoundingClientRect();
+          return r.top <= line && r.bottom > line;
+        });
+      setActive(current ? current.link : null);
+    };
+
+    updateActive();
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(updateActive);
+      }
+    }, { passive: true });
+    window.addEventListener('resize', updateActive);
+  }
+
   /* ---------- Reveal on scroll ---------- */
   if (!reduceMotion.matches && 'IntersectionObserver' in window) {
     root.classList.add('js-reveal');
