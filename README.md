@@ -44,8 +44,8 @@ Until a file exists, its slot shows a tinted block with the expected filename. I
 - **Placeholder buttons**: "View workshops & courses" and "Explore resources" currently link to their own sections. ("Meet Kim", "Discover our story" and the About Kim nav link go to `about-kim.html`; "The Approach", "Discover QEC" and "Understand the approach" go to `qec.html`.) Point them at real pages when those exist.
 - **Testimonials**: duplicate the `<figure class="testimonial">` in the testimonials section. Prev/next buttons appear automatically when there's more than one.
 - **Open Graph**: set `og:url` and `og:image` in `<head>` to absolute URLs on the live domain.
-- **Footer credit** ("Website by [Your studio]") and the CTA disclaimer text.
-- **Logo / favicon**: the header logo is `images/kamissa-logo.png` (600 px wide, transparent; CSS turns it white over the home hero). `images/favicon.svg` is still a placeholder.
+- **CTA disclaimer** text.
+- **Logo / favicon**: the header logo is `images/kamissa-logo.png` (600 px wide, transparent; CSS turns it white over the home hero). The footer uses `images/kamissa-logo-white.png`, a 600 px copy of `Kamissa-Coaching-logo-white.png`. `images/favicon.svg` is still a placeholder.
 
 ## Notes
 

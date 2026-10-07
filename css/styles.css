@@ -735,6 +735,11 @@ main:focus { outline: none; }
   font-size: var(--fs-small);
 }
 .site-footer__top { display: grid; gap: 40px; padding-bottom: 40px; }
+.site-footer__logo {
+  width: auto;
+  height: 56px;
+  margin-bottom: 20px;
+}
 .site-footer__tagline {
   max-width: 340px;
   font-family: var(--font-head);
@@ -759,7 +764,6 @@ main:focus { outline: none; }
   border-top: 1px solid rgb(255 255 255 / 0.18);
   font-size: 0.8125rem;
 }
-.site-footer__bottom p + p { margin-top: 0; }
 
 @media (min-width: 900px) {
   .site-footer__top { grid-template-columns: 1fr auto; align-items: start; }
