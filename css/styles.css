@@ -725,7 +725,7 @@ main:focus { outline: none; }
 }
 .cta h2 { font-size: clamp(2rem, 1.4rem + 2.6vw, 3.25rem); color: var(--white); text-wrap: balance; }
 .cta__content > p:not(.eyebrow) { max-width: 520px; margin: 0 auto 32px; color: rgb(255 255 255 / 0.9); }
-.cta .cta__note { margin: 28px auto 0; font-size: 0.8125rem; opacity: 0.75; }
+.cta__content > p.cta__note { margin: 15px auto 0; font-size: 0.8125rem; opacity: 0.75; }
 
 /* ---------- 18. Footer ---------- */
 .site-footer {
